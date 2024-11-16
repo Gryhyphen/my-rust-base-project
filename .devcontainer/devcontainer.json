@@ -4,7 +4,7 @@
 	"name": "Debian Rust Dev Env",
 	// Based off https://github.com/devcontainers/images/blob/main/src/base-debian/.devcontainer/devcontainer.json
 	"build": {
-		"dockerfile": "./Dockerfile",
+		"dockerfile": "./dockerfile",
 		"context": "."
 	},
 	//"image": "mcr.microsoft.com/devcontainers/base:bookworm",

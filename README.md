@@ -1,0 +1,1 @@
+Run build.zsh to build and flash the pico

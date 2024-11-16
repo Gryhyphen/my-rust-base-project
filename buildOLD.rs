@@ -3,7 +3,14 @@ use std::fs;
 use std::path::PathBuf;
 use std::process::Command;
 
+// Unable to use this build script as
+//  1. The binary is compiled at the end of the build script, meaning that we don't
+//     have access to the binary until the script completes. This means we are always
+//     viewing the old binary
+//  2. The build script is randomly triggered by the linting tools and so code
+//     was being flashed to the pico when it wasn't intended to.
 fn main() {
+    /* *
     // Get the current directory
     let current_dir = env::current_dir().expect("Failed to get current directory");
 
@@ -26,15 +33,16 @@ fn main() {
         .join(package_name);
 
     // Define the openocd command and arguments
-    let openocd_command = "openocd";
+    let openocd_command = "sudo";
     let openocd_args = [
+        "openocd",
         "-s", "tcl",
         "-f", "interface/cmsis-dap.cfg",
         "-f", "target/rp2040.cfg",
         "-c", "adapter speed 5000",
         "-c", &format!("program {} verify reset exit", build_path.display()),
     ];
-
+    
     // Execute the openocd command
     let status = Command::new(openocd_command)
         .args(&openocd_args)
@@ -43,5 +51,5 @@ fn main() {
 
     if !status.success() {
         panic!("openocd command failed with status: {}", status);
-    }
+    }*/
 }

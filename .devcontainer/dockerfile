@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:1.0.9-bookworm
+FROM mcr.microsoft.com/devcontainers/base:bookworm
 
 # Install latest keyring
 #RUN apt-get update \
