@@ -1,0 +1,47 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+	"name": "Debian Rust Dev Env",
+	// Based off https://github.com/devcontainers/images/blob/main/src/base-debian/.devcontainer/devcontainer.json
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "."
+	},
+	//"image": "mcr.microsoft.com/devcontainers/base:bookworm",
+	
+	"runArgs": ["--privileged"],
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true,
+			"username": "vscode",
+			"userUid": "1000",
+			"userGid": "1000"
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": false,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/rust:1": {
+			"targets": "thumbv6m-none-eabi"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"marus25.cortex-debug",
+				"rust-lang.rust-analyzer",
+				"tamasfe.even-better-toml"
+			]
+		}
+	}
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	//"remoteUser": "root"
+}

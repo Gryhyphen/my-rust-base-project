@@ -1,0 +1,18 @@
+FROM mcr.microsoft.com/devcontainers/base:1.0.9-bookworm
+
+# Install latest keyring
+#RUN apt-get update \
+#    && sudo apt-get install --only-upgrade debian-archive-keyring
+
+# Install Rust
+#COPY installrust.sh /installrust.sh
+#RUN chmod +x /installrust.sh
+#ENV TARGETS="thumbv6m-none-eabi"
+#RUN /installrust.sh
+
+# Install apt packages
+RUN sudo apt-get update \
+    && sudo apt-get install -y \
+    # To get SWD working, need to have the following installed in the container
+    openocd \
+    gdb-multiarch
