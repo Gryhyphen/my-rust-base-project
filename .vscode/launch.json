@@ -9,7 +9,7 @@
             "cwd": "${workspaceRoot}",
             "executable": "${config:custom.debug.binaryPath}",
             "name": "Cortex-Debug with external OpenOCD",
-            "request": "launch",
+            "request": "attach",
             "type": "cortex-debug",
             "showDevDebugOutput": "none",
             "servertype": "external",
