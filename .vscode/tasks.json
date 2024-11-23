@@ -16,7 +16,22 @@
                 "-c",
                 "\"adapter speed 5000\""
             ],
-            "problemMatcher": { "owner": "custom", "pattern": [ { "regexp": ".", "file": 1, "location": 2, "message": 0 } ], "background": { "activeOnStart": true, "beginsPattern": "Info : clock speed 5000 kHz", "endsPattern": "ready" } },
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": [
+                    {
+                        "regexp": ".",
+                        "file": 1,
+                        "location": 2,
+                        "message": 0
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Info : clock speed 5000 kHz",
+                    "endsPattern": "ready|accepting 'gdb' connection"
+                }
+            },
             "isBackground": true
         }
     ]
