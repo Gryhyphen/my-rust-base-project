@@ -5,6 +5,23 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "preLaunchTask": "Start OpenOCD Server",
+            "cwd": "${workspaceRoot}",
+            "executable": "${config:custom.debug.binaryPath}",
+            "name": "Cortex-Debug with external OpenOCD",
+            "request": "launch",
+            "type": "cortex-debug",
+            "showDevDebugOutput": "none",
+            "servertype": "external",
+            "gdbTarget": "localhost:3333",
+            "gdbPath": "gdb",
+            // Give restart the same functionality as runToEntryPoint - main
+            "postRestartCommands": [
+                "break main",
+                "continue"
+            ]
+        },
+        {
             "name": "Build and Deploy",
             // Using node terminal as it lets me run the code without expecting
             // me to do anything.

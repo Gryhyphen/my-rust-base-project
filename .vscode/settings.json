@@ -1,4 +1,5 @@
 {
-    "rust-analyzer.check.allTargets": false,
-    "rust-analyzer.cargo.target": "thumbv6m-none-eabi"
+  "rust-analyzer.check.allTargets": false,
+  "rust-analyzer.cargo.target": "thumbv6m-none-eabi",
+  "custom.debug.binaryPath": "/workspaces/my-rust-base-project/target/thumbv6m-none-eabi/debug/embassy_blinky"
 }
